@@ -3,12 +3,31 @@ const inquirer = require('inquirer');
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const { ENGINE_METHOD_DIGESTS } = require('constants');
+const { Hash } = require('crypto');
 //Empty to push data from Emlpoyee into
 employeeArray = [];
 
+//init to start app and Q&A
+const init = () => {
+inquirer
+.prompt([
+    {
+        type: 'input',
+        messgae: 'please enter the team name or company',
+        name: 'name',
 
+    },
+])
+.then((answers) => {
+    const name = answers.name;
+    employeeArray.push(name);
 
+    managerInfo();
+});
+};
 
+//manager callback function
 
 
 
