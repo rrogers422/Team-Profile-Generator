@@ -49,7 +49,7 @@ const managerInfo = () =>
         {
             type: "input",
             message: "What is the office number?",
-            name: "phone",
+            name: "officePhone",
         },
     ])
 
@@ -58,10 +58,40 @@ const managerInfo = () =>
             const name = answers.managerName;
             const id = answers.manID;
             const email = answers.manEmail;
-            const phone = answers.phone;
+            const officePhone = answers.officePhone;
             const newEmployee = new Manager(name, id, email, phone);
             employeeArray.push(newEmployee);
 
             newEmp();
         });
 
+const newEmp = () => {
+    //new employee function
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                message: 'Would you like to add more employees?',
+                choices: ['Engineer', 'Intern', 'No'],
+                name: 'newEmpData',
+            },
+
+        ])
+        .then((answers) => {
+            switch (answers.newEmpData) {
+                case "Engineer":
+                    newEngineer();
+                    break;
+                case "Intern":
+                    newIntern();
+                    break;
+                case "No":
+                    generateIT();
+                    break;
+            }
+        });
+};
+
+//Engineer
+
+const newEngineer
