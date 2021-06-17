@@ -31,17 +31,7 @@ inquirer
 
 
 
-
-
-
-
-
-
-
-
-
-
-const questions = 
+const managerInfo = () => 
     inquirer.prompt([
         {
             type: "input",
@@ -62,12 +52,6 @@ const questions =
             type: "input",
             message: "What is the office number?",
             name: "phone",
-        },
-        {
-            type: "checkbox",
-            message: "What type of Team Memeber would you like?",
-            name: "employee",
-            choices: ["Engineer", "Intern", "Nomore Team Members."],
         },
     ])
     
