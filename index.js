@@ -94,4 +94,38 @@ const newEmp = () => {
 
 //Engineer
 
-const newEngineer
+const newEngineer = () => {
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'Engineers name?',
+            name: 'name',
+        },
+        {
+            type: 'input',
+            message: 'Engineers employee id?',
+            name: 'id',
+        },
+        {
+            type: 'input',
+            message: 'Engineers email address',
+            name: 'email',
+        },
+        {
+            type: 'input',
+            message: 'Engineers GitHub username?',
+            name: 'github',
+        },
+    ])
+    .then((answers) => {
+        const name = answers.name;
+        const id = answers.id;
+        const email = answers.email;
+        const github = answers.github;
+        const newEmployee = new Engineer(name, id, email, github)
+        employeeArray.push(newEmployee);
+
+        newEmp();
+    });
+};
