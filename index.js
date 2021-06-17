@@ -6,7 +6,7 @@ const Intern = require("./lib/Intern");
 const { ENGINE_METHOD_DIGESTS } = require('constants');
 const { Hash } = require('crypto');
 //Empty to push data from Emlpoyee into
-employeeArray = [];
+empArray = [];
 
 //init to start app and Q&A
 const init = () => {
@@ -21,7 +21,7 @@ const init = () => {
         ])
         .then((answers) => {
             const name = answers.name;
-            employeeArray.push(name);
+            empArray.push(name);
 
             managerInfo();
         });
@@ -34,17 +34,17 @@ const managerInfo = () =>
         {
             type: "input",
             message: "What is the Team Managers name?",
-            name: "managerName",
+            name: "name",
         },
         {
             type: "input",
             message: "What is the Mangers ID?",
-            name: "manID",
+            name: "id",
         },
         {
             type: "input",
             message: "What is the managers email address?",
-            name: "manEmail",
+            name: "email",
         },
         {
             type: "input",
@@ -55,12 +55,12 @@ const managerInfo = () =>
 
         //consts for user answrs to be properly placed
         .then((answers) => {
-            const name = answers.managerName;
-            const id = answers.manID;
-            const email = answers.manEmail;
+            const name = answers.name;
+            const id = answers.id;
+            const email = answers.email;
             const officePhone = answers.officePhone;
             const newEmployee = new Manager(name, id, email, phone);
-            employeeArray.push(newEmployee);
+            empArray.push(newEmployee);
 
             newEmp();
         });
@@ -124,7 +124,42 @@ const newEngineer = () => {
         const email = answers.email;
         const github = answers.github;
         const newEmployee = new Engineer(name, id, email, github)
-        employeeArray.push(newEmployee);
+        empArray.push(newEmployee);
+
+        newEmp();
+    });
+};
+const newIntern = () => {
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'What is the interns name?',
+            name: 'name',
+        },
+        {
+            type: 'input',
+            message: 'What is the interns employee id?',
+            name: 'id',
+        },
+        {
+            type: 'input',
+            message: 'What is the interns email address?',
+            name: 'email',
+        },
+        {
+            type: 'input',
+            message: 'What is the interns school?',
+            name: 'school',
+        },
+    ])
+    .then((answers) => {
+        const name = answers.name;
+        const id = answers.id;
+        const email = answers.email;
+        const school = answers.school;
+        const newEmployee = new Intern(name, id, email, school);
+        empArray.push(newEmployee);
 
         newEmp();
     });
