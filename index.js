@@ -54,6 +54,15 @@ const managerInfo = () =>
             name: "phone",
         },
     ])
-    
+    .then((answers) => {
+        const name = answers.managerName;
+        const id = answers.manID;
+        const email = answers.manEmail;
+        const phone = answers.phone;
+        const newEmployee = new Manager(name, id, email, phone);
+        employeeArray.push(newEmployee);
+
+        newEmp();
+    });
 
     
