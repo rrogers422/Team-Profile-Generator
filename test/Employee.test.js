@@ -3,10 +3,10 @@ const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
 
-// test("Employee has a name?",() =>{
-//     const e = new Employee()
-//     expect(typeof(e)).toBe("object")
-// });
+test("Employee has a object?",() =>{
+    const e = new Employee()
+    expect(typeof(e)).toBe("object")
+});
 
 test("set name using constructor",() =>{
     const name = 'john'
@@ -28,7 +28,7 @@ test("sets an employee email",() =>{
 
 test("Check that proper role is returned",() =>{
     const role = "Employee";
-    const e = new Employee('john', "100", "test@gmail.com", "Employee")
+    const e = new Employee('x', "y", "z")
     expect(e.role).toBe(role)
 });
 }
