@@ -1,11 +1,12 @@
 const { test, expect } = require("@jest/globals");
 const Employee = require("../lib/Employee");
 
+describe("Employee", () => {
 
-test("Is Employee an Object?",() =>{
-    const e = new Employee()
-    expect(typeof(e)).toBe("object")
-});
+// test("Employee has a name?",() =>{
+//     const e = new Employee()
+//     expect(typeof(e)).toBe("object")
+// });
 
 test("set name using constructor",() =>{
     const name = 'john'
@@ -14,9 +15,22 @@ test("set name using constructor",() =>{
 });
 
 test("set id using constructor",() =>{
-    const id = 100
-    const e = new Employee('john', id)
+    const id = "100";
+    const e = new Employee('john', "100")
     expect(e.id).toBe(id)
 });
 
+test("sets an employee email",() =>{
+    const email = "test@gmail.com";
+    const e = new Employee('john', "100", "test@gmail.com")
+    expect(e.email).toBe(email)
+});
+
+test("Check that proper role is returned",() =>{
+    const role = "Employee";
+    const e = new Employee('john', "100", "test@gmail.com", "Employee")
+    expect(e.role).toBe(role)
+});
+}
+)
 

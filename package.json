@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/rrogers422/Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.0.0",
-    "jest": "^26.6.3"
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.1.1",
+    "jest": "^26.6.3",
+    "run": "^1.4.0",
+    "start": "^5.1.0",
+    "tests": "^0.4.2"
   }
 }
