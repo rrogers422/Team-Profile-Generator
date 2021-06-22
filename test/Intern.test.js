@@ -3,7 +3,7 @@ const Employee = require("../lib/Intern");
 describe("Intern", () => {
 
     test("sets intern's school", () => {
-        const school = "Fancy School";
+        const school = "school";
         const e = new Employee("john", "100", "test@gmail.com", "school");
         expect(e.school).toBe(school);
     })

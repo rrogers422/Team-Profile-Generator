@@ -27,8 +27,8 @@ test("sets an employee email",() =>{
 });
 
 test("Check that proper role is returned",() =>{
-    const role = "Employee";
-    const e = new Employee('x', "y", "z")
+    const role = "a";
+    const e = new Employee("x", "y", "z", "a")
     expect(e.role).toBe(role)
 });
 }

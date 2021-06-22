@@ -4,7 +4,7 @@ describe("Engineer", () => {
 
     test("sets Engineers GitHub", () => {
         const gitHub = "rrogers422";
-        const e = new Employee("john", "100", "test@gmail.com", "gitHub");
+        const e = new Employee("john", "100", "test@gmail.com", "rrogers422");
         expect(e.gitHub).toBe(gitHub);
     })
     test("check proper role is returned", () => {

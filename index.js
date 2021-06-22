@@ -9,7 +9,7 @@ const { Hash } = require('crypto');
 empArray = [];
 
 //init to start app and Q&A
-const init = () => {
+const initialize = () => {
     inquirer
         .prompt([
             {
@@ -59,7 +59,7 @@ const managerInfo = () =>
             const id = answers.id;
             const email = answers.email;
             const officePhone = answers.officePhone;
-            const newEmployee = new Manager(name, id, email, phone);
+            const newEmployee = new Manager(name, id, email, officePhone);
             empArray.push(newEmployee);
 
             newEmp();
@@ -86,7 +86,7 @@ const newEmp = () => {
                     newIntern();
                     break;
                 case "No":
-                    generateIT();
+                    createHTML();
                     break;
             }
         });
@@ -115,14 +115,14 @@ const newEngineer = () => {
         {
             type: 'input',
             message: 'Engineers GitHub username?',
-            name: 'github',
+            name: 'gitHub',
         },
     ])
     .then((answers) => {
         const name = answers.name;
         const id = answers.id;
         const email = answers.email;
-        const github = answers.github;
+        const github = answers.gitHub;
         const newEmployee = new Engineer(name, id, email, github)
         empArray.push(newEmployee);
 
@@ -163,4 +163,32 @@ const newIntern = () => {
 
         newEmp();
     });
+    
+    function createHTML() {
+        const starterHTML = `<!DOCTYPE html>
+        <html lang ="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+            <title>Team Generator</title>
+        </head>
+        <body>
+
+        </body>
+        </html>`
+
+        fs.writeFile("./dist/team-manager.html", html, function(err) {
+            if(err) {
+                console.log(err);
+            }
+        });
+    }
+    
+    function addToHTML() {
+    
+    }
+
 };
+initialize();
