@@ -158,7 +158,8 @@ const newIntern = () => {
         const id = answers.id;
         const email = answers.email;
         const school = answers.school;
-        const newEmployee = new Intern(name, id, email, school);
+        const role = answers.role;
+        const newEmployee = new Intern(name, id, email, school, role);
         empArray.push(newEmployee);
 
         newEmp();
@@ -176,11 +177,11 @@ const createHTML = () => {
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-           <link rel="stylesheet" href="style/style.css">
+           <link rel="stylesheet" href="/assets/style.css">
            <meta charset="UTF-8">
            <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-           <title>${empArray[0]}</title>
+           <title> ${empArray[0]}</title>
        </head>
        <body>
            <div class="card-container">`
@@ -189,7 +190,7 @@ const createHTML = () => {
       for (i = 1; i < empArray.length; i++){
           let pushed = `<div class="card" style="width: 18rem;">
                    <div class="card-body">
-                      <h1 class="teamName">${empArray[0]}</h1>
+                      <h1 class="teamName">Team Managers Name: ${empArray[0]}</h1>
                        <h2 class="card-title">${empArray[i].name}</h2>
                        <h3 class="card-subtitle mb-2 text-muted">Role: ${empArray[i].role}</h2>
                    </div>

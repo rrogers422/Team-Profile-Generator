@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.teamName {
+
+    text-align: center;
+    color:rgb(46, 43, 197)
+    
+}
+.card-title {
+    color: rgb(43, 83, 143)
+}
+
+.card-text{
+    color: rgb(0, 0, 0);
+}
+.card {
+    
+    background-color: rgb(232, 235, 191);
+
+}
+
+.card-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-self: center;
+    color: rgb(28, 4, 51);
+    align-items: left;
+    margin-top: 5em;
+    min-height: auto;
+}
+
+p {
+    padding-left: 25%;
+    color: rgb(8, 4, 4);
+
+}
+
+.card-subtitle {
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+
+.card-title {
+    text-align: center;
+}
